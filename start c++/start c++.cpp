@@ -2,10 +2,17 @@
 //
 
 #include <iostream>
+#include<string>
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	std::cout << "Hello world" << std::endl;
+	std::cout << "Enter your name \n";
+
+	std::string name;
+	std::cin >> name;	
+
+	std::cout << "Your name " << name << std::endl;
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
