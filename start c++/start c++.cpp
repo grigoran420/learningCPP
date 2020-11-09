@@ -3,28 +3,41 @@
 
 #include <iostream>
 #include<string>
-
+using namespace std;
 int main()
 {
-	std::cout << "Hello world" << std::endl;
-	std::cout << "Enter your name \n";
+	cout << "Hello world" << endl;
+	cout << "Enter your name \n";
 
-	std::string name;
-	std::cin >> name;	
+	string name;
+	cin >> name;	
 
-	const std::string greeting = "hello " + name;
+	const string greeting = "hello " + name;
 
-	const std::string space(greeting.size(), ' ');
-	const std::string second = "*" + space + "*";
+	const int pad = 1;
 
-	const std::string first(second.size(), '*');
+	const int rows = pad * 2 + 3;
+	const string::size_type cols = greeting.size() + pad * 2 + 2;
 
-	std::cout << std::endl;
-	std::cout << first << std::endl;
-	std::cout << second << std::endl;
-	std::cout << "*" << greeting << "*" << std::endl;
-	std::cout << second << std::endl;
-	std::cout << first << std::endl;
+	cout << endl;
+	for (int r = 0; r != rows; ++r) {
+		string::size_type c = 0;
+		while (c != cols) {
+			if (r == pad + 1 && c == pad + 1) {
+				cout << greeting;
+				c += greeting.size();
+			}
+			else {
+				if (r == 0 || r == rows - 1 || c == 0 || c == cols - 1) {
+					cout << "*";
+				}
+				else cout << " ";
+				++c;
+			}
+
+		}
+		cout << endl;
+	}
 
 }
 
