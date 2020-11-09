@@ -12,7 +12,20 @@ int main()
 	std::string name;
 	std::cin >> name;	
 
-	std::cout << "Your name " << name << std::endl;
+	const std::string greeting = "hello " + name;
+
+	const std::string space(greeting.size(), ' ');
+	const std::string second = "*" + space + "*";
+
+	const std::string first(second.size(), '*');
+
+	std::cout << std::endl;
+	std::cout << first << std::endl;
+	std::cout << second << std::endl;
+	std::cout << "*" << greeting << "*" << std::endl;
+	std::cout << second << std::endl;
+	std::cout << first << std::endl;
+
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
